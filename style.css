@@ -1,0 +1,372 @@
+/* Mengatur font dan tampilan dasar */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, #f7f1e3, #d1ccc0);
+    color: #333;
+    position: relative;
+}
+
+/* Animasi partikel */
+.particles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Container utama */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.logo-text span {
+    font-size: 18px;
+    font-weight: normal;
+    color: #666;
+}
+
+/* Kartu ucapan */
+.greeting-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.animated-text {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.arabic {
+    font-family: 'Great Vibes', cursive;
+    font-size: 24px;
+    color: #8e44ad;
+}
+
+.greeting-sub {
+    font-size: 16px;
+    color: #555;
+}
+
+.decorative-border {
+    width: 50%;
+    height: 2px;
+    background: #8e44ad;
+    margin: 10px auto;
+}
+
+/* Bagian fitur */
+.features {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.feature-box {
+    width: 30%;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.feature-box i {
+    font-size: 24px;
+    color: #8e44ad;
+}
+
+.feature-box h3 {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.feature-box p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Tombol aksi */
+.action-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    background: #8e44ad;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #732d91;
+}
+
+.btn i {
+    margin-right: 5px;
+}
+
+/* Link sosial */
+.social-links {
+    margin-top: 20px;
+}
+
+.social-link {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 24px;
+    color: #8e44ad;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #732d91;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.volume-control {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.volume-control label {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.volume-control input {
+    width: 200px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.lantern-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.lantern {
+    position: absolute;
+    width: 50px;
+    height: 80px;
+    background: url('lentera.png') no-repeat center/contain;
+    opacity: 0.8;
+    animation: flyLanterns 10s linear infinite;
+}
+
+@keyframes flyLanterns {
+    0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-20vh) scale(1);
+        opacity: 0;
+    }
+}
+/* Efek Lentera Bergoyang */
+@keyframes swing {
+    0% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+
+/* Efek Lentera Bergerak Naik Turun */
+@keyframes floatUpDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Efek Cahaya Lentera */
+.lantern-glow {
+    position: absolute;
+    width: 80px;
+    height: 120px;
+    top: 15px;
+    left: -10px;
+    background: radial-gradient(circle, rgba(255, 200, 0, 0.7) 20%, rgba(255, 140, 0, 0) 80%);
+    opacity: 0.6;
+    animation: glow 2s infinite alternate;
+    filter: blur(10px);
+}
+
+/* Animasi Cahaya Lentera */
+@keyframes glow {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+/* Efek Bintang Berkilau */
+.star {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 15px white;
+    animation: twinkle 2s infinite alternate;
+}
+
+/* Animasi Bintang */
+@keyframes twinkle {
+    from { opacity: 0.5; transform: scale(1); }
+    to { opacity: 1; transform: scale(1.5); }
+}
+
+/* Efek Kartu Ucapan Bergoyang Halus */
+.greeting-card:hover {
+    animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(-1.5deg); }
+    50% { transform: rotate(1.5deg); }
+    75% { transform: rotate(-1.5deg); }
+}
+
+/* Efek Confetti */
+.confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: var(--confetti-color);
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+/* Animasi Jatuh Confetti */
+@keyframes fall {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(100vh); opacity: 0; }
+}
+
+.gift-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.gift-box {
+    width: 100px;
+    height: 100px;
+    background-color: #ffcc00;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gift-box:hover {
+    transform: scale(1.1);
+}
+
+.gift-message {
+    display: none;
+    position: absolute;
+    background: #fff8dc;
+    border: 2px solid #ffcc00;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+.gift-message h2 {
+    color: #d2691e;
+}
+
+.gift-message p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button {
+    background-color: #ff9800;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #f57c00;
+}
+
+/* ======== Efek Glassmorphism yang Lebih Terbaca ======== */
+.glass {
+    background: rgba(255, 255, 255, 0.25); /* Tambahkan opacity agar lebih jelas */
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(255, 223, 186, 0.2);
+    color: #333; /* Warna teks lebih gelap agar terbaca */
+}
+
+/* ======== Warna Teks di Dalam Glass ======== */
+.glass h1, .glass p {
+    color: #222; /* Warna lebih gelap agar kontras */
+}
+
+
