@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Hari Raya Idul Fitri</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ffe6e6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hearts-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            color: #ff3366;
+            animation: float 6s linear infinite;
+            opacity: 0;
+        }
+
+        .apology-box {
+            background: white;
+            padding: 2rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transform: scale(0);
+            animation: popIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+            max-width: 400px;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #ff3366;
+            margin-bottom: 1rem;
+            font-size: 2.5em;
+            animation: pulse 2s infinite;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            background: #ff3366;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255,51,102,0.3);
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0); }
+            80% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .love-heart {
+            position: fixed;
+            font-size: 50px;
+            color: #ff3366;
+            animation: love 1s ease-out forwards;
+            display: none;
+            pointer-events: none;
+        }
+
+        @keyframes love {
+            0% { 
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(2) translateY(-20px);
+                opacity: 0.8;
+            }
+            100% { 
+                transform: scale(2.5) translateY(-40px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts-container" id="hearts"></div>
+    
+    <div class="container">
+        <div class="apology-box">
+            <h1>Selamat Hari Raya Idul Fitri 1446 H</h1>
+            <p>Taqabbalallahu minna wa minkum, shiyamana wa shiyamakum.<br>  
+               Di hari yang suci ini, mari kita sucikan hati dengan saling memaafkan, eratkan silaturahmi, dan tingkatkan ketakwaan.<br>  
+               Semoga keberkahan, kebahagiaan, dan kedamaian senantiasa menyertai kita semua.</p>
+            <button class="btn" onclick="acceptApology()">
+                <i class="fas fa-heart"></i> Minal Aidin Wal Faizin
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            for(let i = 0; i < 20; i++) {
+                const heart = document.createElement('i');
+                heart.className = 'heart fas fa-heart';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                heartsContainer.appendChild(heart);
+            }
+        }
+
+        function acceptApology() {
+            const btn = document.querySelector('.btn');
+            const apologyBox = document.querySelector('.apology-box');
+            
+            const loveHeart = document.createElement('i');
+            loveHeart.className = 'love-heart fas fa-heart';
+            loveHeart.style.left = (btn.offsetLeft + btn.offsetWidth/2 - 25) + 'px';
+            loveHeart.style.top = (btn.offsetTop - 25) + 'px';
+            document.body.appendChild(loveHeart);
+            loveHeart.style.display = 'block';
+
+            apologyBox.style.animation = 'popIn 0.5s reverse forwards';
+            btn.innerHTML = '<i class="fas fa-heart"></i> Terima Kasih!';
+            btn.style.backgroundColor = '#4CAF50';
+            
+            setTimeout(() => {
+                loveHeart.remove();
+            }, 1000);
+        }
+
+        createHearts();
+    </script>
+</body>
+</html>
