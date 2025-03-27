@@ -1,12 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
+   'darkMode') === 'true';
+    if(savedDarkMode) {
+        document.body.classList.add('dark-mode');
+        document.querySelector('.dark-mode-toggle i').classList.add('fa-sun');
+        document.querySelector('.dark-mode-toggle i').classList.remove('fa-moon');
+    }
+
     createLanterns();
     animateText();
     setupTakbirAudio();
     setupHoverEffects();
     setupParticles();
 });
+i
+function toggleDarkMode() {
+    const body = document.body;
+    const toggleBtn = document.querySelector('.dark-mode-toggle i');
+    
+    body.classList.toggle('dark-mode');
+    const isDarkMode = body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDarkMode);
+    
+    // Ganti ikon
+    toggleBtn.classList.toggle('fa-moon');
+    toggleBtn.classList.toggle('fa-sun');
+}
 
-// Fungsi untuk membuat lentera bergerak
 function createLanterns() {
     const container = document.createElement("div");
     container.classList.add("lantern-container");
@@ -22,7 +41,6 @@ function createLanterns() {
     }
 }
 
-// Fungsi untuk memutar atau menghentikan suara takbir
 function playTakbir() {
     let audio = document.getElementById("takbir-audio");
     let button = document.querySelector(".takbir-btn");
@@ -39,7 +57,6 @@ function playTakbir() {
     }
 }
 
-// Fungsi untuk mengatur kontrol volume
 function setupTakbirAudio() {
     const takbirAudio = document.getElementById("takbir-audio");
     const volumeControl = document.getElementById("volume");
@@ -51,7 +68,6 @@ function setupTakbirAudio() {
     });
 }
 
-// Efek konfeti saat halaman dimuat
 window.onload = function () {
     setTimeout(() => {
         confetti({
@@ -62,7 +78,6 @@ window.onload = function () {
     }, 500);
 };
 
-// Fungsi animasi teks greeting
 function animateText() {
     let greeting = document.querySelector(".animated-text h1");
     greeting.style.opacity = 0;
@@ -82,7 +97,6 @@ function animateText() {
     typeWriter();
 }
 
-// Fungsi untuk menampilkan galeri dalam modal
 function showGallery() {
     let galleryModal = document.createElement("div");
     galleryModal.classList.add("gallery-modal");
@@ -99,25 +113,20 @@ function showGallery() {
     `;
     document.body.appendChild(galleryModal);
 }
-
-// Fungsi untuk menutup modal galeri
 function closeGallery() {
     document.querySelector(".gallery-modal").remove();
 }
 
-// Efek bintang berkilau
 const stars = document.querySelectorAll(".star");
 stars.forEach(star => {
     let duration = Math.random() * 3 + 2;
     star.style.animationDuration = `${duration}s`;
 });
 
-// Fungsi untuk menutup popup
 function closePopup() {
     document.getElementById("popup").style.display = "none";
 }
 
-// Efek hover pada fitur
 function setupHoverEffects() {
     document.querySelectorAll(".feature-box").forEach(box => {
         box.addEventListener("mouseenter", function () {
@@ -129,7 +138,6 @@ function setupHoverEffects() {
     });
 }
 
-// Inisialisasi animasi latar belakang partikel
 function setupParticles() {
     particlesJS("particles", {
         particles: {
@@ -165,3 +173,4 @@ function openGift() {
 function closeGift() {
     document.getElementById("giftMessage").style.display = "none";
 }
+
