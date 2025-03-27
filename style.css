@@ -1,4 +1,3 @@
-/* Mengatur font dan tampilan dasar */
 body {
     margin: 0;
     padding: 0;
@@ -9,7 +8,6 @@ body {
     position: relative;
 }
 
-/* Animasi partikel */
 .particles {
     position: fixed;
     width: 100%;
@@ -17,14 +15,12 @@ body {
     z-index: -1;
 }
 
-/* Container utama */
 .container {
     max-width: 800px;
     margin: auto;
     padding: 20px;
 }
 
-/* Header */
 .header {
     display: flex;
     justify-content: center;
@@ -55,7 +51,6 @@ body {
     color: #666;
 }
 
-/* Kartu ucapan */
 .greeting-card {
     background: #fff;
     border-radius: 10px;
@@ -88,7 +83,6 @@ body {
     margin: 10px auto;
 }
 
-/* Bagian fitur */
 .features {
     display: flex;
     justify-content: space-between;
@@ -118,7 +112,6 @@ body {
     color: #777;
 }
 
-/* Tombol aksi */
 .action-buttons {
     margin-top: 20px;
 }
@@ -216,21 +209,19 @@ body {
         opacity: 0;
     }
 }
-/* Efek Lentera Bergoyang */
+
 @keyframes swing {
     0% { transform: rotate(-5deg); }
     50% { transform: rotate(5deg); }
     100% { transform: rotate(-5deg); }
 }
 
-/* Efek Lentera Bergerak Naik Turun */
 @keyframes floatUpDown {
     0% { transform: translateY(0); }
     50% { transform: translateY(10px); }
     100% { transform: translateY(0); }
 }
 
-/* Efek Cahaya Lentera */
 .lantern-glow {
     position: absolute;
     width: 80px;
@@ -243,13 +234,11 @@ body {
     filter: blur(10px);
 }
 
-/* Animasi Cahaya Lentera */
 @keyframes glow {
     from { opacity: 0.5; }
     to { opacity: 1; }
 }
 
-/* Efek Bintang Berkilau */
 .star {
     position: absolute;
     width: 6px;
@@ -260,13 +249,11 @@ body {
     animation: twinkle 2s infinite alternate;
 }
 
-/* Animasi Bintang */
 @keyframes twinkle {
     from { opacity: 0.5; transform: scale(1); }
     to { opacity: 1; transform: scale(1.5); }
 }
 
-/* Efek Kartu Ucapan Bergoyang Halus */
 .greeting-card:hover {
     animation: shake 0.4s ease-in-out;
 }
@@ -278,7 +265,6 @@ body {
     75% { transform: rotate(-1.5deg); }
 }
 
-/* Efek Confetti */
 .confetti {
     position: absolute;
     width: 8px;
@@ -288,7 +274,6 @@ body {
     animation: fall linear infinite;
 }
 
-/* Animasi Jatuh Confetti */
 @keyframes fall {
     from { transform: translateY(0); opacity: 1; }
     to { transform: translateY(100vh); opacity: 0; }
@@ -354,19 +339,17 @@ button:hover {
     background-color: #f57c00;
 }
 
-/* ======== Efek Glassmorphism yang Lebih Terbaca ======== */
 .glass {
-    background: rgba(255, 255, 255, 0.25); /* Tambahkan opacity agar lebih jelas */
+    background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(15px);
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(255, 223, 186, 0.2);
-    color: #333; /* Warna teks lebih gelap agar terbaca */
+    color: #333; 
 }
 
-/* ======== Warna Teks di Dalam Glass ======== */
 .glass h1, .glass p {
-    color: #222; /* Warna lebih gelap agar kontras */
+    color: #222; 
 }
 
 :root {
@@ -378,7 +361,6 @@ button:hover {
   --icon-dark: #ffd700;
 }
 
-/* Transisi untuk latar belakang saja */
 * {
   transition: background-color 0.3s ease-in-out;
 }
@@ -413,7 +395,6 @@ body {
   font-size: 1.2rem;
 }
 
-/* Dark Mode Styles - Hanya ubah background */
 body.dark-mode {
   background-color: var(--bg-dark);
 }
@@ -427,7 +408,6 @@ body.dark-mode .dark-mode-toggle i {
   transform: rotate(220deg);
 }
 
-/* Pastikan text tetap warna asli */
 body.dark-mode,
 body.dark-mode h1,
 body.dark-mode h2,
@@ -435,10 +415,5 @@ body.dark-mode h3,
 body.dark-mode p,
 body.dark-mode span,
 body.dark-mode div {
-  color: inherit; /* Tetap menggunakan warna default/text asli */
+  color: inherit; 
 }
-
-/* Contoh jika ingin elemen tertentu ikut berubah */
-/* .dark-mode .card {
-  background-color: #2d2d2d;
-} */
